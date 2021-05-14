@@ -1,0 +1,59 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2011-07-07'
+  expeditions:
+  - actions: Deployment
+    end_date: '2010-10-16'
+    name: MOMARsat2010
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2010-10-02'
+  - actions: Recovery
+    end_date: '2011-07-23'
+    name: MOMARsat2011
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2011-06-28'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCD
+      - LSVND
+      - LSVSD
+      - LSVED
+      - LSVWD
+  reference_name: MOMAR_2010-2011_D
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2010-10-04'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-selected
+      starttime: '2009-10-19T11:17:16'
+      title: Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - from select_LSFRM_summit_big_clear_2007-2020.inp
+      source_position:
+        depth.km: 2.5
+        lat: 37.299
+        lon: -32.286
+      starttime: 2011-06-14:27:20
+      title: M0.7 local earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

@@ -1,0 +1,72 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2013-08-29'
+  expeditions:
+  - actions: Deployment
+    end_date: '2012-07-27'
+    name: MOMARsat2012
+    ship_name: N/O Thalassa
+    start_date: '2012-07-10'
+  - actions: Recovery
+    end_date: '2013-09-07'
+    name: MOMARsat2013
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2013-08-23'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCF
+      - LSVNF
+      - LSVSF
+      - LSVEF
+      - LSVWF
+  reference_name: MOMAR_2012-2013_F
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2012-07-18'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-selected
+      source_position:
+        depth.km: 20.0
+        lat: 37.414
+        lon: -32.058
+      starttime: '2012-07-23T21:01:45'
+      title: M2.4 Regional earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - from select_LSFRM_summit_big_clear_2007-2020.inp
+      source_position:
+        depth.km: 2.7
+        lat: 37.289
+        lon: -32.289
+      starttime: '2012-10-19T05:51:28'
+      title: M0.5 local earthquake
+    - duration.s: 20
+      notes:
+      - hand-selected
+      source_position:
+        depth.km: 4.5
+        lat: 37.101
+        lon: -32.512
+      starttime: '2013-08-20T14:46:15'
+      title: M2.1 Regional earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

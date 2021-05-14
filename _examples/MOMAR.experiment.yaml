@@ -1,0 +1,466 @@
+---
+format_version: "0.106"
+revision: 
+    date: "2020-12-10"
+    authors: 
+        -
+            first_name: "Wayne"
+            last_name: "Crawford"
+            email: "crawford@ipgp.fr"
+experiment:
+    reference_name: "EMSO-MOMAR"
+    reference_scientist:
+        first_name: "Wayne"
+        last_name: "Crawford"
+        institution: "Institut de Physique du Globe de Paris"
+        email: "crawford@ipgp.fr"
+        telephone: ~
+    data_distribution:
+        embargo_period.a: 3
+    fdsn_network:
+        code: "4G"
+        name: "EMSO-MOMAR"
+        start_date: "2007-01-01"
+        end_date: "2025-12-31"
+    campaigns:
+        -
+            reference_name: "MOMAR_2007-2008_A"
+            start_date: "2007-07-20"
+            end_date: "2008-08-15"
+            operators:
+                "INSU-IPGP":
+                    notes: 
+                        - "LSV5A and LSV6A were temporary deployments with currentmeters"
+                        - "AZBBA halfway between Lucky Strike and Ponta Delgado"
+                    stations:
+                        - 'AZBBA'
+                        - 'LSV5A'
+                        - 'LSV6A'
+                        - 'LSVCA'
+                        - 'LSVNA'
+                        - 'LSVSA'
+                        - 'LSVEA'
+                        - 'LSVWA'
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "Local earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2007-08-04T12:32:10"
+                        duration.s: 30
+                    -
+                        title: "M0.5 local earthquake"
+                        notes: ["from select_local_1km_0709_step2_end.out.xyz"]
+                        starttime: "2007-11-28T03:43:33"
+                        source_position: {lat: 37.30741, lon: -32.28497, depth.km: 2.413}
+                        duration.s: 20
+                    -
+                        title: "M5.3 regional earthquake"
+                        notes: ["Recovered from https://earthquake.usgs.gov/earthquakes/search/ using circular region = [37.292N, -32.28E, 200km]"]
+                        starttime: "2008-03-02T00:19:59"
+                        source_position: {lat: 36.426, lon: -33.820, depth.km: 10.0}
+                        duration.min: 4
+                    -
+                        title: "Local earthquake, late in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2008-08-01T10:59:28"
+                        duration.s: 20
+            expeditions:
+                - {name: "BBMOMAR1", actions: "Deployment"}
+                - {name: "BBMOMAR2", actions: "Recovery"}
+        -
+            reference_name: "MOMAR_2008-2009_B"
+            start_date: "2008-08-10"
+            end_date: "2009-09-02"
+            operators:
+                "INSU-IPGP":
+                    notes: ["Leap second at 2008-12-31T23:59:60"]
+                    stations:
+                        - 'LSVCB'
+                        - 'LSVNB'
+                        - 'LSVSB'
+                        - 'LSVEB'
+                        - 'LSVWB'
+            expeditions:
+                - {name: "BBMOMAR2", actions: "Deployment"}
+                - {name: "BATHYLUCK2009", actions: "Recovery"}
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "M1.3 Local earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2008-08-23T06:02:19"
+                        source_position: {lat: 37.286, lon: -32.283, depth.km: 2.3 }
+                        duration.s: 20
+                    -
+                        title: "M1.6 local earthquake"
+                        notes: 
+                            - "from select_LSFRM_summit_big_clear_2007-2020.inp"
+                        starttime: "2009-03-30T20:27:00"
+                        source_position: {lat: 37.288, lon: -32.279, depth.km: 2.3 }
+                        duration.s: 20
+                    -
+                        title: "Local earthquake, late in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2009-08-30T18:29:57"
+                        duration.s: 20
+        -
+            reference_name: "MOMAR_2009-2010_C"
+            start_date: "2009-09-03"
+            end_date: "2010-10-12"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVCC'
+                        - 'LSVNC'
+                        - 'LSVSC'
+                        - 'LSVEC'
+                        - 'LSVWC'
+            expeditions:
+                - {name: "BATHYLUCK2009", actions: "Deployment"}
+                - {name: "MOMARsat2010", actions: "Recovery"}
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "M1.7 Local earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2009-09-10T06:50:40"
+                        source_position: {lat: 37.159, lon: -32.378, depth.km: 4.5 }
+                        duration.s: 20
+                    -
+                        title: "M1.3 local earthquake"
+                        notes:  ["from select_LSFRM_summit_big_clear_2007-2020.inp"]
+                        starttime: "2010-01-07T04:58:57"
+                        source_position: {lat: 37.284, lon: -32.277, depth.km: 3.4 }
+                        duration.s: 20
+                    -
+                        title: "M1.1 Local earthquake, late in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2010-09-26T00:39:10"
+                        duration.s: 20
+        -
+            reference_name: "MOMAR_2010-2011_D"
+            start_date: "2010-10-04"
+            end_date: "2011-07-07"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVCD'
+                        - 'LSVND'
+                        - 'LSVSD'
+                        - 'LSVED'
+                        - 'LSVWD'
+            expeditions:
+                - {name: "MOMARsat2010", actions: "Deployment"}
+                - {name: "MOMARsat2011", actions: "Recovery"}
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "Local earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2009-10-19T11:17:16"
+                        duration.s: 20
+                    -
+                        title: "M0.7 local earthquake, late in deployment"
+                        notes: ["from select_LSFRM_summit_big_clear_2007-2020.inp"]
+                        starttime: "2011-06-14:27:20"
+                        source_position: {lat: 37.299, lon: -32.286, depth.km: 2.5 }
+                        duration.s: 20
+        -
+            reference_name: "MOMAR_2011-2012_E"
+            start_date: "2011-07-11"
+            end_date: "2012-07-17"
+            operators:
+                "INSU-IPGP":
+                    notes: ["Leap second on 2012-06-31T23:59:60"]
+                    stations:
+                        - 'LSVCE'
+                        - 'LSVNE'
+                        - 'LSVSE'
+                        - 'LSVEE'
+                        - 'LSVWE'
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "M0.8 local earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2011-07-15T15:28:24"
+                        source_position: {lat: 37.282, lon: -32.285, depth.km: 3.2}
+                        duration.s: 15
+                    -
+                        title: "M0.5 local earthquake"
+                        notes: ["from select_LSFRM_summit_big_clear_2007-2020.inp"]
+                        starttime: "2011-10-19T14:02:37"
+                        source_position: {lat: 37.289, lon: -32.289, depth.km: 2.7}
+                        duration.s: 20
+                    -
+                        title: "Local earthquake, late in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2012-07-01T17:46:00"
+                        duration.s: 20
+            expeditions:
+                - {name: "MOMARsat2011", actions: "Deployment"}
+                - {name: "MOMARsat2012", actions: "Recovery"}
+        -
+            reference_name: "MOMAR_2012-2013_F"
+            start_date: "2012-07-18"
+            end_date: "2013-08-29"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVCF'
+                        - 'LSVNF'
+                        - 'LSVSF'
+                        - 'LSVEF'
+                        - 'LSVWF'
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "M2.4 Regional earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2012-07-23T21:01:45"
+                        source_position: {lat: 37.414, lon: -32.058, depth.km: 20.0}
+                        duration.s: 20
+                    -
+                        title: "M0.5 local earthquake"
+                        notes: ["from select_LSFRM_summit_big_clear_2007-2020.inp"]
+                        starttime: "2012-10-19T05:51:28"
+                        source_position: {lat: 37.289, lon: -32.289, depth.km: 2.7}
+                        duration.s: 20
+                    -
+                        title: "M2.1 Regional earthquake, late in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2013-08-20T14:46:15"
+                        source_position: {lat: 37.101, lon: -32.512, depth.km: 4.5}
+                        duration.s: 20
+            expeditions:
+                - {name: "MOMARsat2012", actions: "Deployment"}
+                - {name: "MOMARsat2013", actions: "Recovery"}
+        -
+            reference_name: "MOMAR_2013-2014_G"
+            operators:
+                "INSU-IPGP":
+                    stations: []
+            validation_methods:
+                waveform_windows: []
+            notes: ["All stations failed?"]
+        -
+            reference_name: "MOMAR_2014-2015_H"
+            start_date: "2014-07-20"
+            end_date: "2015-04-19"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVSH'
+                        - 'LSVEH'
+                        - 'LSVWH'
+            notes: ["stations LSVNH et LSVCH n'ont pas marché"]
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "Local earthquake, early in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2014-07-24T20:40:30"
+                        duration.s: 20
+                    -
+                        title: "local? earthquake, late in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2015-04-01T23:30:06"
+                        duration.s: 20
+            expeditions:
+                - {name: "MOMARsat2014", actions: "Deployment"}
+                - {name: "MOMARsat2015", actions: "Recovery"}
+        -
+            reference_name: "MOMAR_2015-2016_I"
+            start_date: "2015-04-19"
+            end_date: "2016-05-28"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVCI'
+                        - 'LSVNI'
+                        - 'LSVSI'
+                        - 'LSVEI'
+                        - 'LSVWI'
+            notes: ["Leapsecond at 2015-06-30:23:59:60"]
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "Local earthquake, early in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2015-04-24T15:23:18"
+                        source_position: {lat: 37.290, lon: -32.278, depth.km: 2.9}
+                        duration.s: 20
+                    -
+                        title: "M0.5 local earthquake"
+                        notes: ["from select_LSFRM_summit_big_clear_2007-2020.inp"]
+                        starttime: "2015-09-26T22:54:48"
+                        source_position: {lat: 37.282, lon: -32.285, depth.km: 1.5}
+                        duration.s: 20
+                    -
+                        title: "Regional earthquake, late in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2016-05-16T01:22:50"
+                        source_position: {lat: 37.432, lon: -32.031, depth.km: 3.9}
+                        duration.s: 20
+            expeditions:
+                - {name: "MOMARsat2015", actions: "Deployment"}
+                - {name: "Archipelago2016", actions: "Recovery stations autonomes"}
+                - {name: "MOMARsat2016", actions: "Recovery station central"}
+        -
+            reference_name: "MOMAR_2016-2017_J"
+            start_date: "2016-08-31"
+            end_date: "2017-07-13"
+            operators:
+                "INSU-IPGP":
+                     stations:
+                        - 'LSVCJ'
+                        - 'LSVHJ'
+            notes:
+                - "Only central station and HydrOctopus deployed"
+                - "No HydrOctopus info in network file"
+                - "Central station is bad at end"
+            validation_methods:
+                waveform_windows:
+                   -
+                        title: "Local earthquake, early in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2016-09-12T00:23:40"
+                        duration.s: 20
+                   -
+                        title: "Local earthquake, late in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2017-07-10T00:25:10"
+                        duration.s: 20
+            expeditions:
+                - {name: "MOMARsat2016", actions: "Deployment"}
+                - {name: "MOMARsat2017", actions: "Recovery"}
+        -
+            reference_name: "MOMAR_2017-2018_K"
+            start_date: "2017-07-14"
+            end_date: "2018-08-13"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVCK'
+                        - 'LSVNK'
+                        - 'LSVSK'
+                        - 'LSVEK'
+                        - 'LSVWK'
+            validation_methods:
+                waveform_windows:
+                   -
+                        title: "Regional earthquake, early in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2017-07-26T15:07:24"
+                        duration.s: 20
+                   -
+                        title: "Regional earthquake during LSVEK data period"
+                        notes: ["hand-scanned"]
+                        starttime: "2017-09-12T14:30:35"
+                        duration.s: 30
+                   -
+                        title: "Regional earthquake, late in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2018-07-01T07:36:05"
+                        duration.s: 25
+            expeditions:
+                - {name: "MOMARsat2017", actions: "Deployment"}
+                - {name: "MOMARsat2018", actions: "Recovery"}
+        -
+            reference_name: "MOMAR_2018-2019_L"
+            start_date: "2018-08-13"
+            end_date: "2019-06-14"
+            notes:
+                - "LSVCL is from 2018-09-13 to 2019-01-01"
+                - "LSVEL is from 2019-02-04 to end"
+                - "LSVNL is cut at 2018-12-11"
+            operators:
+                "INSU-IPGP":
+                    stations:
+                        - 'LSVCL'
+                        - 'LSVNL'
+                        - 'LSVSL'
+                        - 'LSVEL'
+                        - 'LSVWL'
+            validation_methods:
+                waveform_windows:
+                   -
+                        title: "Regional earthquake, early in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2018-08-20T00:32:45"
+                        duration.s: 25
+                   -
+                        title: "Regional earthquake after LSVCL starts"
+                        notes: ["hand-scanned"]
+                        starttime: "2018-09-15T07:28:45"
+                        duration.s: 30
+                   -
+                        title: "Regional earthquake, late in deployment"
+                        notes: ["hand-scanned"]
+                        starttime: "2019-06-06T07:15:50"
+                        duration.s: 35
+            expeditions:
+                - {name: "MOMARsat2018", actions: "Deployment"}
+                - {name: "MOMARsat2019", actions: "Recovery"}
+    expeditions:
+        "BBMOMAR1":
+            ship_name: "N/O Suroit"
+            start_date: "2007-07-18"
+            end_date:  "2007-07-27"
+        "BBMOMAR2":
+            ship_name: "N/O Suroit"
+            start_date: "2008-08-08"
+            end_date: "2008-08-17"
+        "BATHYLUCK2009":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2009-08-31"
+            end_date: "2009-09-29"
+        "MOMARsat2010":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2010-10-02"
+            end_date: "2010-10-16"
+        "MOMARsat2011":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2011-06-28"
+            end_date: "2011-07-23"
+        "MOMARsat2012":
+            ship_name: "N/O Thalassa"
+            start_date: "2012-07-10"
+            end_date: "2012-07-27"
+        "MOMARsat2013":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2013-08-23"
+            end_date: "2013-09-07"
+        "MOMARsat2014":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2014-07-13"
+            end_date: "2014-07-31"
+        "MOMARsat2015":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2015-04-08"
+            end_date: "2015-04-29"
+        "Archipelago2016":
+            ship_name: "N/O Archipelago"
+            start_date: "2016-05-27"
+            end_date: "2016-05-29"
+        "MOMARsat2016":
+            ship_name: "N/O Atalante"
+            start_date: "2016-08-24"
+            end_date: "2016-09-13"
+        "MOMARsat2017":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2017-07-08"
+            end_date: "2017-07-28"
+        "MOMARsat2018":
+            ship_name: "N/O Atalante"
+            start_date: "2018-08-08"
+            end_date: "2018-08-27"
+        "MOMARsat2019":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2019-06-11"
+            end_date: "2019-07-03"
+        "MOMARsat2020":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2020-09-03"
+            end_date: "2020-10-09"

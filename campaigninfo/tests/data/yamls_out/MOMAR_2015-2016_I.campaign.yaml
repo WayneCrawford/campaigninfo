@@ -1,0 +1,79 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2016-05-28'
+  expeditions:
+  - actions: Deployment
+    end_date: '2015-04-29'
+    name: MOMARsat2015
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2015-04-08'
+  - actions: Recovery stations autonomes
+    end_date: '2016-05-29'
+    name: Archipelago2016
+    ship_name: N/O Archipelago
+    start_date: '2016-05-27'
+  - actions: Recovery station central
+    end_date: '2016-09-13'
+    name: MOMARsat2016
+    ship_name: N/O Atalante
+    start_date: '2016-08-24'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  notes:
+  - Leapsecond at 2015-06-30:23:59:60
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCI
+      - LSVNI
+      - LSVSI
+      - LSVEI
+      - LSVWI
+  reference_name: MOMAR_2015-2016_I
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2015-04-19'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      source_position:
+        depth.km: 2.9
+        lat: 37.29
+        lon: -32.278
+      starttime: '2015-04-24T15:23:18'
+      title: Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - from select_LSFRM_summit_big_clear_2007-2020.inp
+      source_position:
+        depth.km: 1.5
+        lat: 37.282
+        lon: -32.285
+      starttime: '2015-09-26T22:54:48'
+      title: M0.5 local earthquake
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      source_position:
+        depth.km: 3.9
+        lat: 37.432
+        lon: -32.031
+      starttime: '2016-05-16T01:22:50'
+      title: Regional earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

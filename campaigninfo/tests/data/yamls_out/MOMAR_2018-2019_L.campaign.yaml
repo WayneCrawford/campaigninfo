@@ -1,0 +1,64 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2019-06-14'
+  expeditions:
+  - actions: Deployment
+    end_date: '2018-08-27'
+    name: MOMARsat2018
+    ship_name: N/O Atalante
+    start_date: '2018-08-08'
+  - actions: Recovery
+    end_date: '2019-07-03'
+    name: MOMARsat2019
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2019-06-11'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  notes:
+  - LSVCL is from 2018-09-13 to 2019-01-01
+  - LSVEL is from 2019-02-04 to end
+  - LSVNL is cut at 2018-12-11
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCL
+      - LSVNL
+      - LSVSL
+      - LSVEL
+      - LSVWL
+  reference_name: MOMAR_2018-2019_L
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2018-08-13'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 25
+      notes:
+      - hand-scanned
+      starttime: '2018-08-20T00:32:45'
+      title: Regional earthquake, early in deployment
+    - duration.s: 30
+      notes:
+      - hand-scanned
+      starttime: '2018-09-15T07:28:45'
+      title: Regional earthquake after LSVCL starts
+    - duration.s: 35
+      notes:
+      - hand-scanned
+      starttime: '2019-06-06T07:15:50'
+      title: Regional earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

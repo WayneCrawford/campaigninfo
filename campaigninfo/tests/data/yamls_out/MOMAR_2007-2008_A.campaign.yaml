@@ -1,0 +1,80 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2008-08-15'
+  expeditions:
+  - actions: Deployment
+    end_date: '2007-07-27'
+    name: BBMOMAR1
+    ship_name: N/O Suroit
+    start_date: '2007-07-18'
+  - actions: Recovery
+    end_date: '2008-08-17'
+    name: BBMOMAR2
+    ship_name: N/O Suroit
+    start_date: '2008-08-08'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  operators:
+    INSU-IPGP:
+      notes:
+      - LSV5A and LSV6A were temporary deployments with currentmeters
+      - AZBBA halfway between Lucky Strike and Ponta Delgado
+      stations:
+      - AZBBA
+      - LSV5A
+      - LSV6A
+      - LSVCA
+      - LSVNA
+      - LSVSA
+      - LSVEA
+      - LSVWA
+  reference_name: MOMAR_2007-2008_A
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2007-07-20'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 30
+      notes:
+      - hand-selected
+      starttime: '2007-08-04T12:32:10'
+      title: Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - from select_local_1km_0709_step2_end.out.xyz
+      source_position:
+        depth.km: 2.413
+        lat: 37.30741
+        lon: -32.28497
+      starttime: '2007-11-28T03:43:33'
+      title: M0.5 local earthquake
+    - duration.min: 4
+      notes:
+      - Recovered from https://earthquake.usgs.gov/earthquakes/search/ using circular
+        region = [37.292N, -32.28E, 200km]
+      source_position:
+        depth.km: 10.0
+        lat: 36.426
+        lon: -33.82
+      starttime: '2008-03-02T00:19:59'
+      title: M5.3 regional earthquake
+    - duration.s: 20
+      notes:
+      - hand-selected
+      starttime: '2008-08-01T10:59:28'
+      title: Local earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

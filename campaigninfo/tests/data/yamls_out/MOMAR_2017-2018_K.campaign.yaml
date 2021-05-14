@@ -1,0 +1,60 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2018-08-13'
+  expeditions:
+  - actions: Deployment
+    end_date: '2017-07-28'
+    name: MOMARsat2017
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2017-07-08'
+  - actions: Recovery
+    end_date: '2018-08-27'
+    name: MOMARsat2018
+    ship_name: N/O Atalante
+    start_date: '2018-08-08'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCK
+      - LSVNK
+      - LSVSK
+      - LSVEK
+      - LSVWK
+  reference_name: MOMAR_2017-2018_K
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2017-07-14'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      starttime: '2017-07-26T15:07:24'
+      title: Regional earthquake, early in deployment
+    - duration.s: 30
+      notes:
+      - hand-scanned
+      starttime: '2017-09-12T14:30:35'
+      title: Regional earthquake during LSVEK data period
+    - duration.s: 25
+      notes:
+      - hand-scanned
+      starttime: '2018-07-01T07:36:05'
+      title: Regional earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

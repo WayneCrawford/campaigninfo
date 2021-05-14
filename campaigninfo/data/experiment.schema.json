@@ -1,0 +1,113 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Experiment",
+	"description": "Ensemble of data collection campaigns",
+	"type": "object",
+	"required": ["experiment","format_version"],
+	"properties": {
+	    "format_version" : {"$ref" : "#/format_version"},
+	    "revision" :       {"$ref" : "definitions.schema.json#/revision"},
+		"experiment":      {"$ref" : "#/definitions/experiment"},
+	    "notes" :          {"$ref" : "definitions.schema.json#/note_list"},
+	    "yaml_anchors" :   {"$ref" : "definitions.schema.json#/yaml_anchors"},
+	    "extras":          {"$ref" : "definitions.schema.json#/extras"}
+	},
+    "additionalProperties" : false,
+    "format_version" : {
+        "anyOf": [
+            {"$ref" : "definitions.schema.json#/format_version"},
+            {"type": "string","pattern": "^0\\.106$","comment":"version of last change to campaign schema"}
+        ]
+    },
+	"definitions": {
+		"experiment": {
+			"type": "object",
+			"required": [
+				"reference_name",
+				"reference_scientist",
+				"data_distribution",
+				"fdsn_network",
+				"campaigns"
+			],
+			"properties": {
+				"reference_name":        {"$ref" : "definitions.schema.json#/reference_name" },
+				"reference_scientist" :  {"$ref" : "definitions.schema.json#/author" },
+				"fdsn_network" :         {"$ref" : "campaign.schema.json#/definitions/fdsn_network" },
+				"data_distribution" :    {"$ref" : "campaign.schema.json#/definitions/data_distribution" },
+				"campaigns" :            {"$ref" : "#/definitions/campaigns" },
+				"expeditions" :          {"$ref" : "#/definitions/expeditions_details" },
+				"notes" :                {"$ref" : "definitions.schema.json#/note_list"},
+	            "extras":                {"$ref" : "definitions.schema.json#/extras"}
+			},
+			"additionalProperties" : false
+		},
+		"campaigns": {
+			"type": "array",
+			"description": "individual campaigns",
+			"minItems": 1,
+			"items":   {"$ref" : "#/definitions/campaign"}
+		},
+		"campaign": {
+			"type": "object",
+			"required": [
+				"reference_name",
+				"operators",
+				"validation_methods"
+			],
+			"properties": {
+				"reference_name":        {"$ref" : "definitions.schema.json#/reference_name" },
+				"operators" :            {"$ref" : "campaign.schema.json#/definitions/operators_map" },
+				"validation_methods" :   {"$ref" : "campaign.schema.json#/definitions/validation_methods" },
+				"expeditions" :          {"$ref" : "#/definitions/expeditions_ref" },
+                "start_date":            { "$ref": "definitions.schema.json#/date_or_null" },
+                "end_date":              { "$ref": "definitions.schema.json#/date_or_null" },
+				"notes" :                {"$ref" : "definitions.schema.json#/note_list"},
+	            "extras":                {"$ref" : "definitions.schema.json#/extras"}
+			},
+			"additionalProperties" : false
+		},
+        "expeditions_ref": {
+            "type": "array",
+            "description": "list of OBS expeditions involved in the campaign",
+            "items": { "$ref": "#/definitions/expedition_ref" }
+        },
+        "expeditions_details": {
+            "type": "object",
+            "description": "expedition names and properties",
+            "patternProperties": {
+                "^.+$": {"$ref" : "#/definitions/expedition_details"}
+            },
+            "additionalProperties" : false
+        },
+        "expedition_ref" : {
+            "type":"object",
+            "description": "reference to a shipboard expedition within campaign",
+            "required": ["name", "actions"],
+            "properties": {
+                "name":      { "$ref": "definitions.schema.json#/string_or_null" },
+                "actions":   { "$ref": "definitions.schema.json#/string_or_null" }
+            },
+            "additionalProperties" : false
+        },
+        "expedition_details_map": {
+        },
+        "expedition_details" : {
+            "type":"object",
+            "description": "a shipboard expedition for OBS deployment, recovery and/or evaluation",
+            "required": ["ship_name","start_date"],
+            "properties":{
+                "ship_name": { "$ref": "definitions.schema.json#/string_or_null" },
+                "comment":   { "$ref": "definitions.schema.json#/string_or_null" },
+                "report":    { 
+                    "anyOf": [
+                        {"type":"string", "format":"url"},
+                        {"type":"null"}
+                    ]
+                },
+                "start_date":  { "$ref": "definitions.schema.json#/date_or_null" },
+                "end_date":    { "$ref": "definitions.schema.json#/date_or_null" }
+            },
+            "additionalProperties" : false
+        }
+	}
+}

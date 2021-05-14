@@ -1,0 +1,55 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2015-04-19'
+  expeditions:
+  - actions: Deployment
+    end_date: '2014-07-31'
+    name: MOMARsat2014
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2014-07-13'
+  - actions: Recovery
+    end_date: '2015-04-29'
+    name: MOMARsat2015
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2015-04-08'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  notes:
+  - "stations LSVNH et LSVCH n'ont pas march\xE9"
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVSH
+      - LSVEH
+      - LSVWH
+  reference_name: MOMAR_2014-2015_H
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2014-07-20'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      starttime: '2014-07-24T20:40:30'
+      title: Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      starttime: '2015-04-01T23:30:06'
+      title: local? earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

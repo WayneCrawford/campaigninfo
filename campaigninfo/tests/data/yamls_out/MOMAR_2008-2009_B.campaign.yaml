@@ -1,0 +1,70 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2009-09-02'
+  expeditions:
+  - actions: Deployment
+    end_date: '2008-08-17'
+    name: BBMOMAR2
+    ship_name: N/O Suroit
+    start_date: '2008-08-08'
+  - actions: Recovery
+    end_date: '2009-09-29'
+    name: BATHYLUCK2009
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2009-08-31'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  operators:
+    INSU-IPGP:
+      notes:
+      - Leap second at 2008-12-31T23:59:60
+      stations:
+      - LSVCB
+      - LSVNB
+      - LSVSB
+      - LSVEB
+      - LSVWB
+  reference_name: MOMAR_2008-2009_B
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2008-08-10'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-selected
+      source_position:
+        depth.km: 2.3
+        lat: 37.286
+        lon: -32.283
+      starttime: '2008-08-23T06:02:19'
+      title: M1.3 Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - from select_LSFRM_summit_big_clear_2007-2020.inp
+      source_position:
+        depth.km: 2.3
+        lat: 37.288
+        lon: -32.279
+      starttime: '2009-03-30T20:27:00'
+      title: M1.6 local earthquake
+    - duration.s: 20
+      notes:
+      - hand-selected
+      starttime: '2009-08-30T18:29:57'
+      title: Local earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

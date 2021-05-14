@@ -1,0 +1,56 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2017-07-13'
+  expeditions:
+  - actions: Deployment
+    end_date: '2016-09-13'
+    name: MOMARsat2016
+    ship_name: N/O Atalante
+    start_date: '2016-08-24'
+  - actions: Recovery
+    end_date: '2017-07-28'
+    name: MOMARsat2017
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2017-07-08'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  notes:
+  - Only central station and HydrOctopus deployed
+  - No HydrOctopus info in network file
+  - Central station is bad at end
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCJ
+      - LSVHJ
+  reference_name: MOMAR_2016-2017_J
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2016-08-31'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      starttime: '2016-09-12T00:23:40'
+      title: Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - hand-scanned
+      starttime: '2017-07-10T00:25:10'
+      title: Local earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

@@ -1,0 +1,29 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  notes:
+  - All stations failed?
+  operators:
+    INSU-IPGP:
+      stations: []
+  reference_name: MOMAR_2013-2014_G
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  validation_methods:
+    waveform_windows: []
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

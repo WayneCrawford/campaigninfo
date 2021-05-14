@@ -1,0 +1,68 @@
+campaign:
+  data_distribution:
+    embargo_period.a: 3
+  end_date: '2010-10-12'
+  expeditions:
+  - actions: Deployment
+    end_date: '2009-09-29'
+    name: BATHYLUCK2009
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2009-08-31'
+  - actions: Recovery
+    end_date: '2010-10-16'
+    name: MOMARsat2010
+    ship_name: N/O Pourquoi Pas?
+    start_date: '2010-10-02'
+  fdsn_network:
+    code: 4G
+    end_date: '2025-12-31'
+    name: EMSO-MOMAR
+    start_date: '2007-01-01'
+  operators:
+    INSU-IPGP:
+      stations:
+      - LSVCC
+      - LSVNC
+      - LSVSC
+      - LSVEC
+      - LSVWC
+  reference_name: MOMAR_2009-2010_C
+  reference_scientist:
+    email: crawford@ipgp.fr
+    first_name: Wayne
+    institution: Institut de Physique du Globe de Paris
+    last_name: Crawford
+    telephone: null
+  start_date: '2009-09-03'
+  validation_methods:
+    waveform_windows:
+    - duration.s: 20
+      notes:
+      - hand-selected
+      source_position:
+        depth.km: 4.5
+        lat: 37.159
+        lon: -32.378
+      starttime: '2009-09-10T06:50:40'
+      title: M1.7 Local earthquake, early in deployment
+    - duration.s: 20
+      notes:
+      - from select_LSFRM_summit_big_clear_2007-2020.inp
+      source_position:
+        depth.km: 3.4
+        lat: 37.284
+        lon: -32.277
+      starttime: '2010-01-07T04:58:57'
+      title: M1.3 local earthquake
+    - duration.s: 20
+      notes:
+      - hand-selected
+      starttime: '2010-09-26T00:39:10'
+      title: M1.1 Local earthquake, late in deployment
+format_version: '0.106'
+revision:
+  authors:
+  - email: crawford@ipgp.fr
+    first_name: Wayne
+    last_name: Crawford
+  date: '2020-12-10'

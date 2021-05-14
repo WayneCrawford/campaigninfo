@@ -1,0 +1,172 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Campaign",
+	"description": "Data collection campaign, to be filled in by chief scientist",
+	"type": "object",
+	"required": ["campaign","format_version"],
+	"properties": {
+	    "format_version" : {"$ref" : "#/format_version"},
+	    "revision" :       {"$ref" : "definitions.schema.json#/revision"},
+		"campaign":        {"$ref" : "#/definitions/campaign"},
+	    "notes" :          {"$ref" : "definitions.schema.json#/note_list"},
+	    "yaml_anchors" :   {"$ref" : "definitions.schema.json#/yaml_anchors"},
+	    "extras":          {"$ref" : "definitions.schema.json#/extras"}
+	},
+    "additionalProperties" : false,
+    "format_version" : {
+        "anyOf": [
+            {"$ref" : "definitions.schema.json#/format_version"},
+            {"type": "string","pattern": "^0\\.106$","comment":"version of last change to campaign schema"}
+        ]
+    },
+	"definitions": {
+		"campaign": {
+			"type": "object",
+			"required": [
+				"reference_name",
+				"reference_scientist",
+				"operators",
+				"data_distribution",
+				"fdsn_network",
+				"validation_methods"
+			],
+			"properties": {
+				"reference_name":        {"$ref" : "definitions.schema.json#/reference_name" },
+				"reference_scientist" :  {"$ref" : "definitions.schema.json#/author" },
+				"fdsn_network" :         {"$ref" : "#/definitions/fdsn_network" },
+				"operators" :            {"$ref" : "#/definitions/operators_map" },
+				"data_distribution" :    {"$ref" : "#/definitions/data_distribution" },
+				"validation_methods" :   {"$ref" : "#/definitions/validation_methods" },
+				"expeditions" :          {"$ref" : "#/definitions/expeditions" },
+				"notes" :                {"$ref" : "definitions.schema.json#/note_list"},
+	            "extras":                {"$ref" : "definitions.schema.json#/extras"}
+			},
+			"additionalProperties" : false
+		},
+        "fdsn_network": {
+            "type": "object",
+            "description": "FDSN network information",
+            "required": ["code","start_date"],
+           "properties": {
+                "code": {"type": "string"}, 
+                "start_date": {"type": "string"}, 
+                "end_date": {"type": "string"}, 
+                "name": {"type": "string"}
+            },
+            "additionalProperties" : false
+        },
+        "operators_map": {
+            "type": "object",
+            "description": "operators used and their stations",
+            "patternProperties": {
+                "^.+$": {"$ref" : "#/definitions/operator"}
+            },
+            "additionalProperties" : false
+        },
+        "operator": {
+            "type":"object",
+            "title": "Operating facility",
+            "properties": {
+                "stations": {"$ref" : "#/definitions/station_list"},
+				"notes" :   {"$ref" : "definitions.schema.json#/note_list"}
+            },
+            "additionalProperties" : false
+        },
+        "station_list": {
+            "type": "array", 
+            "description": "List of stations deployed by the operator",
+            "minItems": 0,
+            "items": {  "type": "string" }
+        },
+        "data_distribution": {
+            "type": "object",
+            "description": "Parameters related to data distribution",
+            "properties": {
+                "embargo_period.a": {
+                    "type": "integer",
+                    "description": "Requested years to embargo data (max 3 for RESIF)",
+                    "minimum": 0,
+                    "maximum": 5
+                },
+                "retention": {
+                    "type": "boolean",
+                    "description": "Should the A-node wait embargo.a years after each campaign 2+ before delivering to the B-node? (the B-node only witholds embargo.a years after the FIRST campaign)"
+                }
+            },
+            "additionalProperties" : false
+        },
+        "validation_methods": {
+            "type":"object",
+            "description":"information used to validate networ data/metadata",
+            "required": ["waveform_windows"],
+            "properties": {
+                "waveform_windows": {
+                    "type":"array",
+                    "description": "list of waveform windows to plot",
+                    "items": {  "$ref": "#/definitions/waveform_window" }
+                }
+            },
+            "additionalProperties" : false
+        },
+        "waveform_window": {  
+            "type":"object",
+            "description": "waveform window to plot (SHOULD REQUIRE EITHER duration.s or duration.m, but I don't know how)",
+            "required": ["title", "starttime"],
+            "properties":{
+                "title": {"type":"string"},
+                "starttime": {
+                    "description":"start of plot window" ,
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "duration.s": {
+                    "description" : "number of seconds to plot" ,
+                    "type" : "integer"
+                },
+                "duration.min": {
+                    "description" : "number of minutes to plot" ,
+                    "type" : "integer"
+                },
+                "source_position": {
+                    "type":"object",
+                    "description":"position of source, used to plot waveforms by distance rather than alphabetically",
+                    "required": ["lat", "lon"],
+                    "properties": {
+                        "lat": {"type": "number", "description": "longitude"},
+                        "lon": {"type": "number", "description": "latitude"},
+                        "depth.km": {"type": "number", "description": "depth (km)"}
+                    },
+                    "additionalProperties" : false
+                },
+				"notes" :   {"$ref" : "definitions.schema.json#/note_list"}
+            },
+            "additionalProperties" : false
+
+        },				            
+        "expeditions": {
+            "type":"array",
+            "description": "list of OBS expeditions involved in the campaign",
+            "items": { "$ref": "#/definitions/expedition" }
+        },
+        "expedition" : {
+            "type":"object",
+            "description": "a shipboard expedition for OBS deployment, recovery and/or evaluation",
+            "required": ["name","ship_name","start_date"],
+            "properties":{
+                "name":      { "$ref": "definitions.schema.json#/string_or_null" },
+                "ship_name": { "$ref": "definitions.schema.json#/string_or_null" },
+                "actions":   { "$ref": "definitions.schema.json#/string_or_null" },
+                "comment":   { "$ref": "definitions.schema.json#/string_or_null" },
+                "report":    { 
+                    "anyOf": [
+                        {"type":"string", "format":"url"},
+                        {"type":"null"}
+                    ]
+                },
+                "start_date":  { "$ref": "definitions.schema.json#/date_or_null" },
+                "end_date":    { "$ref": "definitions.schema.json#/date_or_null" }
+            },
+            "additionalProperties" : false
+        }
+	}
+}
