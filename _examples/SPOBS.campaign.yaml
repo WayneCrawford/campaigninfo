@@ -7,7 +7,10 @@ format_version: "0.106"
 revision: 
     date: "2017-09-14"
     authors: 
-        - {$ref: "../authors/Wayne_Crawford.author.yaml#author"}
+        -
+            first_name: "Wayne"
+            last_name: "Crawford"
+            email: "crawford@ipgp.fr"
 campaign:
     reference_name: "MYCAMPAIGN"
     reference_scientist:
@@ -16,7 +19,7 @@ campaign:
         institution: "Institut de Petits Genies de Paris"
         email: "genie@ipgp.fr"
         telephone: ~
-    OBS_facilities:
+    operators:
         # Use facility_reference_names: e.g. "INSU-IPGP","Geoazur","DEPAS"
         "INSU-IPGP":
             stations: 

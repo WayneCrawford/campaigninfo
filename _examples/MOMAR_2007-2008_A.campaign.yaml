@@ -39,16 +39,16 @@ campaign:
         waveform_windows:
             -
                 title: "M5.3 regional earthquake"
-                notes: "Recovered from https://earthquake.usgs.gov/earthquakes/search/
-                        using circular region = [37.292N, -32.28E, 200km]"
-                datetime: "2008-03-02T00:19:59"
-                source_position: {lat: 36.426, lon: -33.820, depth: 10.0}
+                notes: ["Recovered from https://earthquake.usgs.gov/earthquakes/search/
+                        using circular region = [37.292N, -32.28E, 200km]"]
+                starttime: "2008-03-02T00:19:59"
+                source_position: {lat: 36.426, lon: -33.820, depth.km: 10.0}
                 duration.min: 4
             -
                 title: "M0.5 local earthquake"
                 notes: ["from select_local_1km_0709_step2_end.out.xyz"]
-                datetime: "2007-11-28T03:43:33"
-                source_position: {lat: 37.30741, lon: -32.28497, depth: 2.413 }
+                starttime: "2007-11-28T03:43:33"
+                source_position: {lat: 37.30741, lon: -32.28497, depth.km: 2.413 }
                 duration.s: 20
     expeditions:
         -
