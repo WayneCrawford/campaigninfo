@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Campaign",
 	"description": "Data collection campaign, to be filled in by chief scientist",
 	"type": "object",
@@ -112,8 +112,11 @@
         },
         "waveform_window": {  
             "type":"object",
-            "description": "waveform window to plot (SHOULD REQUIRE EITHER duration.s or duration.m, but I don't know how)",
-            "required": ["title", "starttime"],
+            "description": "waveform window to plot",
+            "oneOf": [ 
+                {"required": ["title", "starttime", "duration.min"]},
+                {"required": ["title", "starttime", "duration.s"]}
+            ],
             "properties":{
                 "title": {"type":"string"},
                 "starttime": {
@@ -131,7 +134,7 @@
                 },
                 "source_position": {
                     "type":"object",
-                    "description":"position of source, used to plot waveforms by distance rather than alphabetically",
+                    "description":"position of source, use to plot waveforms by distance rather than alphabetically",
                     "required": ["lat", "lon"],
                     "properties": {
                         "lat": {"type": "number", "description": "longitude"},

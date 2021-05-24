@@ -43,20 +43,18 @@
 		},
 		"campaigns": {
 		    "$comment": "This should be changed to an object",
-			"type": "array",
-			"description": "individual campaigns",
+			"type": "object",
+			"description": "individual campaigns, key is campaign reference_name",
 			"minItems": 1,
-			"items":   {"$ref" : "#/definitions/campaign"}
+			"additionalProperties":   {"$ref" : "#/definitions/campaign"}
 		},
 		"campaign": {
 			"type": "object",
 			"required": [
-				"reference_name",
 				"operators",
 				"validation_methods"
 			],
 			"properties": {
-				"reference_name":        {"$ref" : "definitions.schema.json#/reference_name" },
 				"operators" :            {"$ref" : "campaign.schema.json#/definitions/operators_map" },
 				"validation_methods" :   {"$ref" : "campaign.schema.json#/definitions/validation_methods" },
 				"expeditions" :          {"$ref" : "#/definitions/expeditions_ref" },

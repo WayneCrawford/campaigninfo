@@ -31,13 +31,14 @@ def _experiment_to_campaigns(fname, quiet=False):
     root = dict(A)
     root['campaign'] = root.pop('experiment')
     
-    for campaign in campaigns:
+    for key, campaign in campaigns.items():
         # print('='*60)
         # print(campaign['reference_name'])
         # print('='*60)
         B = copy.deepcopy(root)
         C = B['campaign']
         C.update(campaign)
+        C['reference_name'] = key
         # print(B)
         if 'expeditions' in C:
             for v in C['expeditions']:

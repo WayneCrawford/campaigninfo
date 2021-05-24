@@ -99,7 +99,7 @@ def validate(filename, format=None, type=None, verbose=False,
             print(f"schema =   {Path(schema_file).name}")
             print("\tTesting schema ...", end="")
 
-        jsonschema.validate(instance, schema)
+        # jsonschema.validate(instance, schema)
         v = jsonschema.Draft7Validator(schema)
 
         if verbose:
