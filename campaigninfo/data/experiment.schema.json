@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Experiment",
 	"description": "Ensemble of data collection campaigns",
 	"type": "object",
@@ -42,6 +42,7 @@
 			"additionalProperties" : false
 		},
 		"campaigns": {
+		    "$comment": "This should be changed to an object",
 			"type": "array",
 			"description": "individual campaigns",
 			"minItems": 1,
@@ -74,10 +75,7 @@
         "expeditions_details": {
             "type": "object",
             "description": "expedition names and properties",
-            "patternProperties": {
-                "^.+$": {"$ref" : "#/definitions/expedition_details"}
-            },
-            "additionalProperties" : false
+            "additionalProperties" : {"$ref" : "#/definitions/expedition_details"}
         },
         "expedition_ref" : {
             "type":"object",

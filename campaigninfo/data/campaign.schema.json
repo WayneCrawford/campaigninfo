@@ -99,7 +99,7 @@
         },
         "validation_methods": {
             "type":"object",
-            "description":"information used to validate networ data/metadata",
+            "description":"information used to validate network data/metadata",
             "required": ["waveform_windows"],
             "properties": {
                 "waveform_windows": {

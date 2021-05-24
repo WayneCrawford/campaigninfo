@@ -16,7 +16,7 @@ import jsonschema
 import yaml
 
 # Local modules
-from . import yamlref
+from .yamlref import load as yamlref_load, loads as yamlref_loads
 from .info_dict import InfoDict
 
 root_symbol = "#"
@@ -57,7 +57,7 @@ def validate(filename, format=None, type=None, verbose=False,
     """
 
     if quiet:
-        verbose = False
+       verbose = False
 
     if not type and not schema_file:
         type = get_information_file_type(filename)
@@ -80,7 +80,7 @@ def validate(filename, format=None, type=None, verbose=False,
         urllib.request.pathname2url(str(Path(schema_file).parent)))
     with open(schema_file, "r") as f:
         try:
-            schema = yamlref.loads(f.read(), base_uri=base_uri,
+            schema = yamlref_loads(f.read(), base_uri=base_uri,
                                    jsonschema=True)
         except json.decoder.JSONDecodeError as e:
             print("JSONDecodeError: Error loading JSON schema file: {}"
@@ -99,7 +99,8 @@ def validate(filename, format=None, type=None, verbose=False,
             print(f"schema =   {Path(schema_file).name}")
             print("\tTesting schema ...", end="")
 
-        v = jsonschema.Draft4Validator(schema)
+        jsonschema.validate(instance, schema)
+        v = jsonschema.Draft7Validator(schema)
 
         if verbose:
             print("OK")
@@ -182,7 +183,7 @@ def _read_json_yaml_ref(filename, format=None, debug=False):
     base_uri = f"file:{base_path}/"
     # print(f'read_json_yaml_ref: base_uri={base_uri}')
     with open(filename, "r") as f:
-        return yamlref.load(f, base_uri=base_uri)
+        return yamlref_load(f, base_uri=base_uri)
 
 
 def read_info_file(filename, format=None):

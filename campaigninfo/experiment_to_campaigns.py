@@ -18,11 +18,11 @@ def main():
     args = parser.parse_args()
     _experiment_to_campaigns(args.expt_file)
     
-def _experiment_to_campaigns(fname):
+def _experiment_to_campaigns(fname, quiet=False):
     pp = pprint.PrettyPrinter(indent=4)
     format = get_information_file_format(fname)
     assert format in ['JSON', 'YAML']
-    validate(fname, type='experiment')
+    validate(fname, type='experiment', quiet=quiet)
 
     A = dict(read_info_file(fname))
 
