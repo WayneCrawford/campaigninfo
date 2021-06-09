@@ -21,11 +21,11 @@ campaign:
   operators:
     INSU-IPGP:
       stations:
-      - LSVCF
-      - LSVNF
-      - LSVSF
-      - LSVEF
-      - LSVWF
+      - LSVCF: {}
+      - LSVNF: {}
+      - LSVSF: {}
+      - LSVEF: {}
+      - LSVWF: {}
   reference_name: MOMAR_2012-2013_F
   reference_scientist:
     email: crawford@ipgp.fr
@@ -63,7 +63,7 @@ campaign:
         lon: -32.512
       starttime: '2013-08-20T14:46:15'
       title: M2.1 Regional earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

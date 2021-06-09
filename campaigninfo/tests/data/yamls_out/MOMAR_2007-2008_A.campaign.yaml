@@ -24,14 +24,14 @@ campaign:
       - LSV5A and LSV6A were temporary deployments with currentmeters
       - AZBBA halfway between Lucky Strike and Ponta Delgado
       stations:
-      - AZBBA
-      - LSV5A
-      - LSV6A
-      - LSVCA
-      - LSVNA
-      - LSVSA
-      - LSVEA
-      - LSVWA
+      - AZBBA: {}
+      - LSV5A: {}
+      - LSV6A: {}
+      - LSVCA: {}
+      - LSVNA: {}
+      - LSVSA: {}
+      - LSVEA: {}
+      - LSVWA: {}
   reference_name: MOMAR_2007-2008_A
   reference_scientist:
     email: crawford@ipgp.fr
@@ -71,7 +71,7 @@ campaign:
       - hand-selected
       starttime: '2008-08-01T10:59:28'
       title: Local earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

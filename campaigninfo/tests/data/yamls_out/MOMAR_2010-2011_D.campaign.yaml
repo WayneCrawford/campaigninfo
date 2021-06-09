@@ -21,11 +21,11 @@ campaign:
   operators:
     INSU-IPGP:
       stations:
-      - LSVCD
-      - LSVND
-      - LSVSD
-      - LSVED
-      - LSVWD
+      - LSVCD: {}
+      - LSVND: {}
+      - LSVSD: {}
+      - LSVED: {}
+      - LSVWD: {}
   reference_name: MOMAR_2010-2011_D
   reference_scientist:
     email: crawford@ipgp.fr
@@ -50,7 +50,7 @@ campaign:
         lon: -32.286
       starttime: 2011-06-14:27:20
       title: M0.7 local earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

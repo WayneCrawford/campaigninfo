@@ -25,8 +25,8 @@ campaign:
   operators:
     INSU-IPGP:
       stations:
-      - LSVCJ
-      - LSVHJ
+      - LSVCJ: {}
+      - LSVHJ: {}
   reference_name: MOMAR_2016-2017_J
   reference_scientist:
     email: crawford@ipgp.fr
@@ -47,7 +47,7 @@ campaign:
       - hand-scanned
       starttime: '2017-07-10T00:25:10'
       title: Local earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

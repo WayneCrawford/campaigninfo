@@ -28,11 +28,11 @@ campaign:
   operators:
     INSU-IPGP:
       stations:
-      - LSVCI
-      - LSVNI
-      - LSVSI
-      - LSVEI
-      - LSVWI
+      - LSVCI: {}
+      - LSVNI: {}
+      - LSVSI: {}
+      - LSVEI: {}
+      - LSVWI: {}
   reference_name: MOMAR_2015-2016_I
   reference_scientist:
     email: crawford@ipgp.fr
@@ -70,7 +70,7 @@ campaign:
         lon: -32.031
       starttime: '2016-05-16T01:22:50'
       title: Regional earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

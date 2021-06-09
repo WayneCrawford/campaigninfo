@@ -16,7 +16,7 @@
     "format_version" : {
         "anyOf": [
             {"$ref" : "definitions.schema.json#/format_version"},
-            {"type": "string","pattern": "^0\\.106$","comment":"version of last change to campaign schema"}
+            {"type": "string","pattern": "^0\\.3$","comment":"version of last change to campaign schema"}
         ]
     },
 	"definitions": {
@@ -42,7 +42,6 @@
 			"additionalProperties" : false
 		},
 		"campaigns": {
-		    "$comment": "This should be changed to an object",
 			"type": "object",
 			"description": "individual campaigns, key is campaign reference_name",
 			"minItems": 1,
@@ -100,6 +99,8 @@
                         {"type":"null"}
                     ]
                 },
+				"notes" :   {"$ref" : "definitions.schema.json#/note_list"},
+                "participants": { "$ref": "definitions.schema.json#/string_or_null" },
                 "start_date":  { "$ref": "definitions.schema.json#/date_or_null" },
                 "end_date":    { "$ref": "definitions.schema.json#/date_or_null" }
             },

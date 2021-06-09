@@ -16,7 +16,7 @@
     "format_version" : {
         "anyOf": [
             {"$ref" : "definitions.schema.json#/format_version"},
-            {"type": "string","pattern": "^0\\.106$","comment":"version of last change to campaign schema"}
+            {"type": "string","pattern": "^0\\.3$","comment":"version of last change to campaign schema"}
         ]
     },
 	"definitions": {
@@ -78,7 +78,16 @@
             "type": "array", 
             "description": "List of stations deployed by the operator",
             "minItems": 0,
-            "items": {  "type": "string" }
+            "items": {"$ref" : "#/definitions/station"}
+        },
+        "station": {
+            "type": "object", 
+            "description": "Optional information about a station.  The start_date and end_date are the EXPECTED station start and end dates",
+            "properties": {
+                "start_date": {"$ref" : "definitions.schema.json#/date-time-Z"},
+                "end_date": {"$ref" : "definitions.schema.json#/date-time-Z"},
+				"notes" :   {"$ref" : "definitions.schema.json#/note_list"}
+            }
         },
         "data_distribution": {
             "type": "object",
@@ -158,16 +167,18 @@
             "description": "a shipboard expedition for OBS deployment, recovery and/or evaluation",
             "required": ["name","ship_name","start_date"],
             "properties":{
-                "name":      { "$ref": "definitions.schema.json#/string_or_null" },
-                "ship_name": { "$ref": "definitions.schema.json#/string_or_null" },
-                "actions":   { "$ref": "definitions.schema.json#/string_or_null" },
-                "comment":   { "$ref": "definitions.schema.json#/string_or_null" },
-                "report":    { 
+                "name":         { "$ref": "definitions.schema.json#/string_or_null" },
+                "ship_name":    { "$ref": "definitions.schema.json#/string_or_null" },
+                "actions":      { "$ref": "definitions.schema.json#/string_or_null" },
+                "participants": { "$ref": "definitions.schema.json#/string_or_null" },
+                "comment":      { "$ref": "definitions.schema.json#/string_or_null" },
+                "report": { 
                     "anyOf": [
                         {"type":"string", "format":"url"},
                         {"type":"null"}
                     ]
                 },
+				"notes" :   {"$ref" : "definitions.schema.json#/note_list"},
                 "start_date":  { "$ref": "definitions.schema.json#/date_or_null" },
                 "end_date":    { "$ref": "definitions.schema.json#/date_or_null" }
             },

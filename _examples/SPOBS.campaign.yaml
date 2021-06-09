@@ -3,7 +3,7 @@
 # Campaign files should be filled in by the reference scientist
 notes:
     - "Example note"
-format_version: "0.106"
+format_version: "0.2"
 revision: 
     date: "2017-09-14"
     authors: 

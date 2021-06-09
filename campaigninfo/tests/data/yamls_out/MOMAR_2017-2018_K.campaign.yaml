@@ -21,11 +21,11 @@ campaign:
   operators:
     INSU-IPGP:
       stations:
-      - LSVCK
-      - LSVNK
-      - LSVSK
-      - LSVEK
-      - LSVWK
+      - LSVCK: {}
+      - LSVNK: {}
+      - LSVSK: {}
+      - LSVEK: {}
+      - LSVWK: {}
   reference_name: MOMAR_2017-2018_K
   reference_scientist:
     email: crawford@ipgp.fr
@@ -51,7 +51,7 @@ campaign:
       - hand-scanned
       starttime: '2018-07-01T07:36:05'
       title: Regional earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

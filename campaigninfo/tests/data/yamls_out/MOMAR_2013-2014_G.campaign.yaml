@@ -20,7 +20,7 @@ campaign:
     telephone: null
   validation_methods:
     waveform_windows: []
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

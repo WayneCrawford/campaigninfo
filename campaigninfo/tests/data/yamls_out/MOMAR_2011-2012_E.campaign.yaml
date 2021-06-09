@@ -23,11 +23,11 @@ campaign:
       notes:
       - Leap second on 2012-06-31T23:59:60
       stations:
-      - LSVCE
-      - LSVNE
-      - LSVSE
-      - LSVEE
-      - LSVWE
+      - LSVCE: {}
+      - LSVNE: {}
+      - LSVSE: {}
+      - LSVEE: {}
+      - LSVWE: {}
   reference_name: MOMAR_2011-2012_E
   reference_scientist:
     email: crawford@ipgp.fr
@@ -61,7 +61,7 @@ campaign:
       - hand-selected
       starttime: '2012-07-01T17:46:00'
       title: Local earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr

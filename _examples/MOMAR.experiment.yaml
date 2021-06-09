@@ -1,5 +1,5 @@
 ---
-format_version: "0.106"
+format_version: "0.2"
 revision: 
     date: "2020-12-10"
     authors: 
@@ -23,8 +23,7 @@ experiment:
         start_date: "2007-01-01"
         end_date: "2025-12-31"
     campaigns:
-        -
-            reference_name: "MOMAR_2007-2008_A"
+        "MOMAR_2007-2008_A":
             start_date: "2007-07-20"
             end_date: "2008-08-15"
             operators:
@@ -68,8 +67,7 @@ experiment:
             expeditions:
                 - {name: "BBMOMAR1", actions: "Deployment"}
                 - {name: "BBMOMAR2", actions: "Recovery"}
-        -
-            reference_name: "MOMAR_2008-2009_B"
+        "MOMAR_2008-2009_B":
             start_date: "2008-08-10"
             end_date: "2009-09-02"
             operators:
@@ -104,8 +102,7 @@ experiment:
                         notes: ["hand-selected"]
                         starttime: "2009-08-30T18:29:57"
                         duration.s: 20
-        -
-            reference_name: "MOMAR_2009-2010_C"
+        "MOMAR_2009-2010_C":
             start_date: "2009-09-03"
             end_date: "2010-10-12"
             operators:
@@ -138,8 +135,7 @@ experiment:
                         notes: ["hand-selected"]
                         starttime: "2010-09-26T00:39:10"
                         duration.s: 20
-        -
-            reference_name: "MOMAR_2010-2011_D"
+        "MOMAR_2010-2011_D":
             start_date: "2010-10-04"
             end_date: "2011-07-07"
             operators:
@@ -166,8 +162,7 @@ experiment:
                         starttime: "2011-06-14:27:20"
                         source_position: {lat: 37.299, lon: -32.286, depth.km: 2.5 }
                         duration.s: 20
-        -
-            reference_name: "MOMAR_2011-2012_E"
+        "MOMAR_2011-2012_E":
             start_date: "2011-07-11"
             end_date: "2012-07-17"
             operators:
@@ -201,8 +196,7 @@ experiment:
             expeditions:
                 - {name: "MOMARsat2011", actions: "Deployment"}
                 - {name: "MOMARsat2012", actions: "Recovery"}
-        -
-            reference_name: "MOMAR_2012-2013_F"
+        "MOMAR_2012-2013_F":
             start_date: "2012-07-18"
             end_date: "2013-08-29"
             operators:
@@ -236,16 +230,14 @@ experiment:
             expeditions:
                 - {name: "MOMARsat2012", actions: "Deployment"}
                 - {name: "MOMARsat2013", actions: "Recovery"}
-        -
-            reference_name: "MOMAR_2013-2014_G"
+        "MOMAR_2013-2014_G":
             operators:
                 "INSU-IPGP":
                     stations: []
             validation_methods:
                 waveform_windows: []
             notes: ["All stations failed?"]
-        -
-            reference_name: "MOMAR_2014-2015_H"
+        "MOMAR_2014-2015_H":
             start_date: "2014-07-20"
             end_date: "2015-04-19"
             operators:
@@ -270,8 +262,7 @@ experiment:
             expeditions:
                 - {name: "MOMARsat2014", actions: "Deployment"}
                 - {name: "MOMARsat2015", actions: "Recovery"}
-        -
-            reference_name: "MOMAR_2015-2016_I"
+        "MOMAR_2015-2016_I":
             start_date: "2015-04-19"
             end_date: "2016-05-28"
             operators:
@@ -307,8 +298,7 @@ experiment:
                 - {name: "MOMARsat2015", actions: "Deployment"}
                 - {name: "Archipelago2016", actions: "Recovery stations autonomes"}
                 - {name: "MOMARsat2016", actions: "Recovery station central"}
-        -
-            reference_name: "MOMAR_2016-2017_J"
+        "MOMAR_2016-2017_J":
             start_date: "2016-08-31"
             end_date: "2017-07-13"
             operators:
@@ -335,8 +325,7 @@ experiment:
             expeditions:
                 - {name: "MOMARsat2016", actions: "Deployment"}
                 - {name: "MOMARsat2017", actions: "Recovery"}
-        -
-            reference_name: "MOMAR_2017-2018_K"
+        "MOMAR_2017-2018_K":
             start_date: "2017-07-14"
             end_date: "2018-08-13"
             operators:
@@ -367,8 +356,7 @@ experiment:
             expeditions:
                 - {name: "MOMARsat2017", actions: "Deployment"}
                 - {name: "MOMARsat2018", actions: "Recovery"}
-        -
-            reference_name: "MOMAR_2018-2019_L"
+        "MOMAR_2018-2019_L":
             start_date: "2018-08-13"
             end_date: "2019-06-14"
             notes:

@@ -1,5 +1,5 @@
 ---
-format_version: "0.106"
+format_version: "0.3"
 revision: 
     date: "2020-12-10"
     authors: 
@@ -32,14 +32,14 @@ experiment:
                         - "LSV5A and LSV6A were temporary deployments with currentmeters"
                         - "AZBBA halfway between Lucky Strike and Ponta Delgado"
                     stations:
-                        - 'AZBBA'
-                        - 'LSV5A'
-                        - 'LSV6A'
-                        - 'LSVCA'
-                        - 'LSVNA'
-                        - 'LSVSA'
-                        - 'LSVEA'
-                        - 'LSVWA'
+                        - 'AZBBA': {}
+                        - 'LSV5A': {}
+                        - 'LSV6A': {}
+                        - 'LSVCA': {}
+                        - 'LSVNA': {}
+                        - 'LSVSA': {}
+                        - 'LSVEA': {}
+                        - 'LSVWA': {}
             validation_methods:
                 waveform_windows:
                     -
@@ -74,11 +74,11 @@ experiment:
                 "INSU-IPGP":
                     notes: ["Leap second at 2008-12-31T23:59:60"]
                     stations:
-                        - 'LSVCB'
-                        - 'LSVNB'
-                        - 'LSVSB'
-                        - 'LSVEB'
-                        - 'LSVWB'
+                        - 'LSVCB': {}
+                        - 'LSVNB': {}
+                        - 'LSVSB': {}
+                        - 'LSVEB': {}
+                        - 'LSVWB': {}
             expeditions:
                 - {name: "BBMOMAR2", actions: "Deployment"}
                 - {name: "BATHYLUCK2009", actions: "Recovery"}
@@ -108,11 +108,11 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVCC'
-                        - 'LSVNC'
-                        - 'LSVSC'
-                        - 'LSVEC'
-                        - 'LSVWC'
+                        - 'LSVCC': {}
+                        - 'LSVNC': {}
+                        - 'LSVSC': {}
+                        - 'LSVEC': {}
+                        - 'LSVWC': {}
             expeditions:
                 - {name: "BATHYLUCK2009", actions: "Deployment"}
                 - {name: "MOMARsat2010", actions: "Recovery"}
@@ -141,11 +141,11 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVCD'
-                        - 'LSVND'
-                        - 'LSVSD'
-                        - 'LSVED'
-                        - 'LSVWD'
+                        - 'LSVCD': {}
+                        - 'LSVND': {}
+                        - 'LSVSD': {}
+                        - 'LSVED': {}
+                        - 'LSVWD': {}
             expeditions:
                 - {name: "MOMARsat2010", actions: "Deployment"}
                 - {name: "MOMARsat2011", actions: "Recovery"}
@@ -169,11 +169,11 @@ experiment:
                 "INSU-IPGP":
                     notes: ["Leap second on 2012-06-31T23:59:60"]
                     stations:
-                        - 'LSVCE'
-                        - 'LSVNE'
-                        - 'LSVSE'
-                        - 'LSVEE'
-                        - 'LSVWE'
+                        - 'LSVCE': {}
+                        - 'LSVNE': {}
+                        - 'LSVSE': {}
+                        - 'LSVEE': {}
+                        - 'LSVWE': {}
             validation_methods:
                 waveform_windows:
                     -
@@ -202,11 +202,11 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVCF'
-                        - 'LSVNF'
-                        - 'LSVSF'
-                        - 'LSVEF'
-                        - 'LSVWF'
+                        - 'LSVCF': {}
+                        - 'LSVNF': {}
+                        - 'LSVSF': {}
+                        - 'LSVEF': {}
+                        - 'LSVWF': {}
             validation_methods:
                 waveform_windows:
                     -
@@ -243,9 +243,9 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVSH'
-                        - 'LSVEH'
-                        - 'LSVWH'
+                        - 'LSVSH': {}
+                        - 'LSVEH': {}
+                        - 'LSVWH': {}
             notes: ["stations LSVNH et LSVCH n'ont pas marché"]
             validation_methods:
                 waveform_windows:
@@ -268,11 +268,11 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVCI'
-                        - 'LSVNI'
-                        - 'LSVSI'
-                        - 'LSVEI'
-                        - 'LSVWI'
+                        - 'LSVCI': {}
+                        - 'LSVNI': {}
+                        - 'LSVSI': {}
+                        - 'LSVEI': {}
+                        - 'LSVWI': {}
             notes: ["Leapsecond at 2015-06-30:23:59:60"]
             validation_methods:
                 waveform_windows:
@@ -304,8 +304,8 @@ experiment:
             operators:
                 "INSU-IPGP":
                      stations:
-                        - 'LSVCJ'
-                        - 'LSVHJ'
+                        - 'LSVCJ': {}
+                        - 'LSVHJ': {}
             notes:
                 - "Only central station and HydrOctopus deployed"
                 - "No HydrOctopus info in network file"
@@ -331,11 +331,11 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVCK'
-                        - 'LSVNK'
-                        - 'LSVSK'
-                        - 'LSVEK'
-                        - 'LSVWK'
+                        - 'LSVCK': {}
+                        - 'LSVNK': {}
+                        - 'LSVSK': {}
+                        - 'LSVEK': {}
+                        - 'LSVWK': {}
             validation_methods:
                 waveform_windows:
                    -
@@ -366,11 +366,11 @@ experiment:
             operators:
                 "INSU-IPGP":
                     stations:
-                        - 'LSVCL'
-                        - 'LSVNL'
-                        - 'LSVSL'
-                        - 'LSVEL'
-                        - 'LSVWL'
+                        - 'LSVCL': {}
+                        - 'LSVNL': {}
+                        - 'LSVSL': {}
+                        - 'LSVEL': {}
+                        - 'LSVWL': {}
             validation_methods:
                 waveform_windows:
                    -

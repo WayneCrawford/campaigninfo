@@ -420,13 +420,16 @@ def _yaml_load(fp, **kwargs):
     try:
         return json.load(fp, **kwargs)
     # except JSONDecodeError:
-    except Exception:
+    except Exception as e_json:
         fp.seek(0)
         try:
             return yaml.safe_load(fp)
         # except ScannerError:
-        except Exception:
-            warnings.warn(f'file {fp.name} is neither JSON nor YAML')
+        except Exception as e_yaml:
+            print(f'file {fp.name} is neither JSON nor YAML')
+            print(f'JSON failure: {e_json}')
+            print(f'YAML failure: {e_yaml}')
+            
     return None
 
 

@@ -23,11 +23,11 @@ campaign:
       notes:
       - Leap second at 2008-12-31T23:59:60
       stations:
-      - LSVCB
-      - LSVNB
-      - LSVSB
-      - LSVEB
-      - LSVWB
+      - LSVCB: {}
+      - LSVNB: {}
+      - LSVSB: {}
+      - LSVEB: {}
+      - LSVWB: {}
   reference_name: MOMAR_2008-2009_B
   reference_scientist:
     email: crawford@ipgp.fr
@@ -61,7 +61,7 @@ campaign:
       - hand-selected
       starttime: '2009-08-30T18:29:57'
       title: Local earthquake, late in deployment
-format_version: '0.106'
+format_version: '0.3'
 revision:
   authors:
   - email: crawford@ipgp.fr
