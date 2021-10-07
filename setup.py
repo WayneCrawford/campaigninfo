@@ -4,11 +4,11 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 version = {}
-with open("campaigninfo/version.py") as fp:
+with open("obscampaigninfo/version.py") as fp:
     exec(fp.read(), version)
 
 setuptools.setup(
-    name="campaigninfo",
+    name="obscampaigninfo",
     version=version['__version__'],
     author="Wayne Crawford",
     author_email="crawford@ipgp.fr",
@@ -25,8 +25,8 @@ setuptools.setup(
     ],
     entry_points={
          'console_scripts': [
-             'experiment_to_campaigns=campaigninfo.experiment_to_campaigns:main',
-             'validate_campaign=campaigninfo.info_files:_validate_script'
+             'experiment_to_campaigns=obscampaigninfo.experiment_to_campaigns:main',
+             'validate_campaign=obscampaigninfo.info_files:_validate_script'
          ]
     },
     python_requires='>=3.7',

@@ -78,7 +78,7 @@
             "type": "array", 
             "description": "List of stations deployed by the operator",
             "minItems": 0,
-            "items": {"$ref" : "#/definitions/station"}
+            "items": {"type" : "string"}
         },
         "station": {
             "type": "object", 

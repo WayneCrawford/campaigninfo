@@ -74,7 +74,7 @@ def validate(filename, format=None, type=None, verbose=False,
 
     if not schema_file:
         schema_file = pkg_resources.resource_filename(
-            "campaigninfo",
+            "obscampaigninfo",
             str(Path("data") / f"{type}.schema.json"))
     base_uri = "file://{}/".format(
         urllib.request.pathname2url(str(Path(schema_file).parent)))
