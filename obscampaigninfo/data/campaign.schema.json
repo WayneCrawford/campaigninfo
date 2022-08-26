@@ -3,10 +3,11 @@
 	"title": "Campaign",
 	"description": "Data collection campaign, to be filled in by chief scientist",
 	"type": "object",
-	"required": ["campaign","format_version"],
+	"required": ["experiment","campaign","format_version"],
 	"properties": {
 	    "format_version" : {"$ref" : "#/format_version"},
 	    "revision" :       {"$ref" : "definitions.schema.json#/revision"},
+	    "experiment":      {"$ref": "#/definitions/experiment"},
 		"campaign":        {"$ref" : "#/definitions/campaign"},
 	    "notes" :          {"$ref" : "definitions.schema.json#/note_list"},
 	    "yaml_anchors" :   {"$ref" : "definitions.schema.json#/yaml_anchors"},
@@ -16,11 +17,27 @@
     "format_version" : {
         "anyOf": [
             {"$ref" : "definitions.schema.json#/format_version"},
-            {"type": "string","pattern": "^0\\.3$","comment":"version of last change to campaign schema"}
+            {"type": "string","pattern": "^0\\.4$","comment":"version of last change to campaign schema"}
         ]
     },
 	"definitions": {
+		"experiment": {
+		    "description": "An experiment covers one or more campaigns",
+			"type": "object",
+			"required": [
+				"reference_name",
+				"start_date",
+				"end_date"
+			],
+			"properties": {
+				"reference_name": {"type" : "string"},
+				"start_date": {"$ref" : "definitions.schema.json#/date"},
+				"end_date":   {"$ref" : "definitions.schema.json#/date_or_null"}
+			},
+			"additionalProperties" : false
+		},
 		"campaign": {
+		    "description": "A campaign is one round of data collection",
 			"type": "object",
 			"required": [
 				"reference_name",

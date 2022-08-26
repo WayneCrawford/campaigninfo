@@ -5,3 +5,5 @@
        
 :v0.3: stations are now objects instead of strings (optional 'start_date',
        'end_date' and 'notes' fields)
+       
+:v0.4: Added experiment information to campaign file.  Added A-node output files

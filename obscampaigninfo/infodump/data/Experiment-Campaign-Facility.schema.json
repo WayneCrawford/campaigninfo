@@ -1,0 +1,373 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "/schemas/SCINFODUMP",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "experiments",
+        "campaigns",
+        "facilities"
+    ],
+    "properties": {
+        "experiments": {
+            "type": "array",
+            "title": "The experiments schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "$ref": "#/$defs/Experiment"
+            }
+        },
+        "campaigns": {
+            "type": "array",
+            "title": "The campaigns schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "$ref": "#/$defs/Campaign"
+            }
+        },
+        "facilities": {
+            "type": "array",
+            "title": "The facilities schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "$ref": "#/$defs/Facility"
+            }
+        }
+    },
+    "additionalProperties": false,
+
+    "$defs": {
+        "DatesPeriod": {
+            "$id": "#/$defs/DatesPeriod",
+            "type": "object",
+            "title": "The working-period schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "start-date",
+                "end-date"
+            ],
+            "properties": {
+                "start-date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "The start-date schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "end-date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "The end-date schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": false
+        },
+        "GeographicPosition": {
+            "$id": "#/$defs/GeographicPosition",
+            "type": ["object","null"],
+            "title": "The source-position schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "required": [
+                "lat.deg",
+                "lon.deg",
+                "elev.m"
+            ],
+            "properties": {
+                "lat.deg": {
+                    "type": "number",
+                    "title": "The lat schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0.0
+                },
+                "lon.deg": {
+                    "type": "number",
+                    "title": "The lon schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0.0
+                },
+                "elev.m": {
+                    "type": "integer",
+                    "title": "The elev schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0
+                }
+            },
+            "additionalProperties": false
+        },
+
+        "Experiment": {
+            "$id": "/schemas/SCINFODUMP/Experiment",
+            "type": "object",
+            "title": "The Experiment schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "_experiment-ref",
+                "name",
+                "working-period"
+            ],
+            "properties": {
+                "_experiment-ref": {
+                    "type": "string",
+                    "title": "The _experiment-ref schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "name": {
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "working-period": {
+                    "$ref": "#/$defs/DatesPeriod"
+                }
+            },
+            "additionalProperties": false
+        },
+
+        "ValidationEvent": {
+            "$id": "#/$defs/ValidationEvent",
+            "type": "object",
+            "title": "The ValidationEvent schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "occurrence-period",
+                "title",
+                "source-position"
+            ],
+            "properties": {
+                "occurrence-period": {
+                    "$id": "#/$defs/ValidationEvent/occurrence-period",
+                    "type": "object",
+                    "title": "The occurrence-period schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "start-datetime",
+                        "duration.s"
+                    ],
+                    "properties": {
+                        "start-datetime": {
+                            "type": "string",
+                            "format": "date-time",
+                            "title": "The start-datetime schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": null
+                        },
+                        "duration.s": {
+                            "type": "integer",
+                            "title": "The duration.s schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": null
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "title": {
+                    "type": "string",
+                    "title": "The title schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "source-position": {
+                    "title": "The source-position schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "nullable": true,
+                    "$ref": "#/$defs/GeographicPosition"
+                }    
+            },
+            "additionalProperties": false
+        },
+        "ByWaveformMethod": {
+            "$id": "#/$defs/ByWaveformMethod",
+            "type": "object",
+            "title": "The BY-WAVEFORM schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "events"
+            ],
+            "properties": {
+                "events": {
+                    "type": "array",
+                    "title": "The events schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "additionalItems": true,
+                    "items": {
+                            "$ref": "#/$defs/ValidationEvent"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+
+        "Campaign_IsAssociatedTo": {
+            "$id": "#/$defs/Campaign_IsAssociatedTo",
+            "type": "object",
+            "title": "The IsAssociatedTo relationship schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "_network-ref"
+            ],
+            "properties": {
+                "_network-ref": {
+                    "type": "string",
+                    "title": "The first-name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                }
+            },
+            "additionalProperties": false
+        },
+        "Campaign": {
+            "$id": "/schemas/SCINFODUMP/Campaign",
+            "type": "object",
+            "title": "The Campaign schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "_campaign-ref",
+                "name",
+                "is-associated-to",
+                "scientist",
+                "validation-methods"
+            ],
+            "properties": {
+                "_campaign-ref": {
+                    "type": "string",
+                    "title": "The _campaign-ref schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "name": {
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "is-associated-to": {
+                    "$ref": "#/$defs/Campaign_IsAssociatedTo"
+                },
+                "scientist": {
+                    "$id": "/schemas/SCINFODUMP/Campaign/scientist",
+                    "type": "object",
+                    "title": "The scientist schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "first-name",
+                        "last-name",
+                        "email"
+                    ],
+                    "properties": {
+                        "first-name": {
+                            "type": "string",
+                            "title": "The first-name schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": null
+                        },
+                        "last-name": {
+                            "type": "string",
+                            "title": "The last-name schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": null
+                        },
+                        "email": {
+                            "type": "string",
+                            "title": "The email schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": null
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "validation-methods": {
+                    "$id": "/schemas/SCINFODUMP/Campaign/validation-methods",
+                    "type": "object",
+                    "title": "The validation-methods schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "required": [
+                        "BY-WAVEFORM"
+                    ],
+                    "properties": {
+                        "BY-WAVEFORM": {
+                            "$ref": "#/$defs/ByWaveformMethod"
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": false
+        },
+
+        "Facility_HasOperated": {
+            "$id": "#/$defs/Facility_HasOperated",
+            "type": "object",
+            "title": "The HasOperated relationship schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "_station-refs"
+            ],
+            "properties": {
+                "_station-refs": {
+                    "type": "array",
+                    "title": "The _station-refs schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "additionalItems": true,
+                    "items": {
+                        "type": "string",
+                        "title": "The first items schema",
+                        "description": "An explanation about the purpose of this instance."
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "Facility": {
+            "$id": "/schemas/SCINFODUMP/Facility",
+            "type": "object",
+            "title": "The Facility schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "_facility-ref",
+                "name",
+                "full-name",
+                "has-operated"
+            ],
+            "properties": {
+                "_facility-ref": {
+                    "type": "string",
+                    "title": "The _facility-ref schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "name": {
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "full-name": {
+                    "type": "string",
+                    "title": "The full-name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null
+                },
+                "has-operated": {
+                    "$ref": "#/$defs/Facility_HasOperated"
+                }
+            },
+            "additionalProperties": false
+        }
+
+    }
+}

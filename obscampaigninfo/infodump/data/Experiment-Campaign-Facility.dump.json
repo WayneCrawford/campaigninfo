@@ -1,0 +1,49 @@
+{
+  "experiments": [
+    {
+      "_experiment-ref": "MOMAR",
+      "name": "MOMAR",
+      "working-period": { "start-date": "2007-01-01", "end-date": "2025-12-31" }
+    }
+  ],
+
+  "campaigns": [
+    {
+      "_campaign-ref": "MOMAR_2007-2008_A@MOMAR",
+
+      "name": "MOMAR_2007-2008_A",
+
+      "is-associated-to": { "_network-ref": "4G+2007" },
+
+      "scientist": { "first-name": "Wayne", "last-name": "Crawford", "email": "crawford@ipgp.fr" },
+
+      "validation-methods": { 
+        "BY-WAVEFORM": {
+          "events": [
+            {
+              "occurrence-period": { "start-datetime": "2007-08-04T12:32:10Z", "duration.s": 30 },
+              "title": "Local earthquake, early in deployment",
+              "source-position": null
+            },
+            {
+              "occurrence-period": { "start-datetime": "2008-03-02T00:19:59Z", "duration.s": 240 },
+              "title": "M5.3 regional earthquake",
+              "source-position": { "lat.deg": 36.426, "lon.deg": -33.82, "elev.m": 10000 }
+            }
+          ]
+        }
+      }
+    }
+  ],
+
+  "facilities": [ 
+    {
+      "_facility-ref": "INSU-IPGP@MOMAR_2007-2008_A@MOMAR",
+
+      "name": "INSU-IPGP",
+      "full-name": "INSU-IPGP OBS Park",
+
+      "has-operated": { "_station-refs": [ "AZBBA@4G+2007", "LSV5A@4G+2007" ] }
+    }
+  ]
+}

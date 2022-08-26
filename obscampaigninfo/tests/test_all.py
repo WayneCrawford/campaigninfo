@@ -12,8 +12,8 @@ from pathlib import Path
 import unittest
 import inspect
 
-from campaigninfo.experiment_to_campaigns import _experiment_to_campaigns
-from campaigninfo.info_files import validate, _read_json_yaml
+from obscampaigninfo.experiment_to_campaigns import _experiment_to_campaigns
+from obscampaigninfo.info_files import validate, _read_json_yaml
 
 
 class TestADDONSMethods(unittest.TestCase):
@@ -33,14 +33,14 @@ class TestADDONSMethods(unittest.TestCase):
         Test validate files
         """
         for fname in self.example_files_path.glob("*.yaml"):
-            self.assertTrue(validate(fname, quiet=True))
+            self.assertTrue(validate(str(fname), quiet=True))
 
     def test_experiment_to_campaigns(self):
         """
         Test creation of campaign files from experiment file
         """
         _experiment_to_campaigns(
-            str(self.testing_path / "MOMAR.experiment.yaml"), quiet=True)
+            str(self.example_files_path / "MOMAR.experiment.yaml"), quiet=True)
         for test_file in (self.testing_path / "yamls_out").glob("MOMAR*.campaign.yaml"):
             a = _read_json_yaml(str(test_file))
             b = _read_json_yaml(test_file.name)

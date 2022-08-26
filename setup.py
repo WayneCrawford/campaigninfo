@@ -26,6 +26,7 @@ setuptools.setup(
     entry_points={
          'console_scripts': [
              'experiment_to_campaigns=obscampaigninfo.experiment_to_campaigns:main',
+             'campaign_infodump=obscampaigninfo.infodump:_infodump_script',
              'validate_campaign=obscampaigninfo.info_files:_validate_script'
          ]
     },

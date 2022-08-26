@@ -1,0 +1,79 @@
+---
+format_version: "0.3"
+revision: 
+    date: "2020-12-10"
+    authors: 
+        -
+            first_name: "Wayne"
+            last_name: "Crawford"
+            email: "crawford@ipgp.fr"
+experiment:
+    reference_name: "ARC_EN_SUB"
+    reference_scientist:
+        full_name: "Nom, Prenom"
+        institution: "Institut ..."
+        email: "xxx@ipgp.fr"
+        telephone: ~
+    data_distribution:
+        embargo_period.a: 3
+    fdsn_network:
+        code: "XX"
+        name: "ARC_EN_SUB"
+        start_date: "2022-05-01"
+        end_date: "2022-05-31"
+    contributors:
+        data_collectors:
+            -   full_name: "Besancon, Simon"
+                affiliation:  "INSU-IPGP OBS Park"
+            -   full_name: "Besancon, Simon"
+                affiliation:  "INSU-IPGP OBS Park"
+    campaigns:
+        "ARC_EN_SUB":
+            start_date: "2022-05-01"
+            end_date: "2022-05-31"
+            operators:
+                "INSU-IPGP":
+                    notes: 
+                        - "LSV5A and LSV6A were temporary deployments with currentmeters"
+                        - "AZBBA halfway between Lucky Strike and Ponta Delgado"
+                    stations:
+                        - 'B01'
+                        - 'B02'
+                        - 'B03'
+                        - 'B04'
+                        - 'B05'
+                        - 'B06'
+                        - 'B07'
+                        - 'B08'
+                        - 'B09'
+            validation_methods:
+                waveform_windows:
+                    -
+                        title: "Local earthquake, early in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2007-08-04T12:32:10"
+                        duration.s: 30
+                    -
+                        title: "M0.5 local earthquake"
+                        notes: ["from select_local_1km_0709_step2_end.out.xyz"]
+                        starttime: "2007-11-28T03:43:33"
+                        source_position: {lat: 37.30741, lon: -32.28497, depth.km: 2.413}
+                        duration.s: 20
+                    -
+                        title: "M5.3 regional earthquake"
+                        notes: ["Recovered from https://earthquake.usgs.gov/earthquakes/search/ using circular region = [37.292N, -32.28E, 200km]"]
+                        starttime: "2008-03-02T00:19:59"
+                        source_position: {lat: 36.426, lon: -33.820, depth.km: 10.0}
+                        duration.min: 4
+                    -
+                        title: "Local earthquake, late in deployment"
+                        notes: ["hand-selected"]
+                        starttime: "2008-08-01T10:59:28"
+                        duration.s: 20
+            expeditions:
+                - {name: "ARC_EN_SUB", actions: "Deployment, Recovery"}
+    expeditions:
+        "ARC_EN_SUB":
+            ship_name: "N/O Pourquoi Pas?"
+            start_date: "2022-05-01"
+            end_date:  "2022-05-31"

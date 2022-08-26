@@ -1,0 +1,77 @@
+# hiérarchie d'informations métiers :
+# Expérience > Campagne > Parc OBS
+
+{
+  # collection d'Expériences (1 seule entrée)
+  "experiments": [ 
+    # type Expérience
+    {
+      # référence "absolue" : valeur de clé métier
+      "_experiment-ref": "<référence expérience>",
+
+      # clé métier
+      "name": "<nom de l'expérience>",
+
+      # Value object : période de réalisation
+      "working-period": { "start-date": "<date de début>", "end-date": "<date de fin>" }
+#?    "achievement-period": { "start-date": <date de début>, "end-date": <date de fin> }
+    }
+  ],
+
+  # collection de Campagnes
+  "campaigns": [ 
+    # type Campagne
+    {
+      # référence "absolue" : valeur de clé métier @ référence expérience
+      "_campaign-ref": "<référence campagne>",
+
+      # clé métier
+      "name": "<identifiant de la campagne>",
+
+      # référence externe : réseau associé à la campagne (clé métier : code FDSN + année)
+      "is-associated-to": { "_network-ref": "<référence réseau>" }, // ou "has-deployed" ?
+
+      # Value object
+      "scientist": { "first-name": "<prénom>", "last-name": "<nom>", "email": "<adresse email>" },
+
+      # méthodes de validation disponibles
+      "validation-methods": { 
+        # méthode : validation par ...
+        "BY-WAVEFORM": { 
+          "events": [
+            # Value object de type Generic Event
+            {
+              # Value object : pour indiquer la période pendant laquelle l'événement s'est produit
+              "occurrence-period": { "start-datetime": "<ISO UTC datetime>Z", "duration.s": "<durée en secondes>" },
+              "title": "<titre de l'événement>",
+              # Value object : position (format WGS84 du GPS, élévation toujours en mètre), vaut null si informations non disponibles
+              "source-position": { "lat.deg": <V>, "lon.deg": <V>, "elev.m": <V> }
+            }, 
+#           {ev2}, ... 
+          ]
+        }
+#       "<METHOD-ID>": { <meth-infos> }, ... 
+      }
+    },
+#   { camp2 }, { camp3 }, ...
+  ],
+
+  # collection de Parcs OBS impliqués dans campagne de mesures
+  "facilities": [ 
+    # type Parc OBS (établissement gérant un pool/flotte d'appareils OBS)
+    {
+      # référence "absolue" : valeur de clé métier @ référence campagne
+      "_facility-ref": "<référence parc>",
+
+      # clé métier
+      "name": "<identifiant du parc>",
+      # si demandé par Onil (exemple de valeur : "INSU-IPGP OBS Park")
+#?    "full-name": <nom complet du parc>
+
+      # références externes : liste des stations instrumentées par le Parc OBS ("operated stations")
+      "has-operated": { "_station-refs": [ "<reference station>", ... ] }  // ou "has-instrumented" ou "is-operating"
+    },
+#   { facil2 }, ...
+  ]
+}
+
